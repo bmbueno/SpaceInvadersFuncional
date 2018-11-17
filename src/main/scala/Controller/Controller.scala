@@ -6,9 +6,7 @@ import scala.util.Random
 
 class Controller(){
 
-  def inicializa(): Unit = {
-
-  }
+  
 
   def setDificuldade(dificuldade: String): Unit = {
 

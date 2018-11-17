@@ -30,4 +30,5 @@ class Personagem(coordX: Int, coordY: Int) extends JLabel{
     }
   }
   
+
 }
