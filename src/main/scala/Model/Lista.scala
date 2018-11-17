@@ -20,5 +20,11 @@ class Lista() {
       case head :: tail => disparo :: lista
     }
   }
-
-}
+  def adicionaDisparo1(disparo: Disparo, lista: List[Disparo]): List[Disparo] ={
+    if(lista.isEmpty) {
+      return  List(disparo)
+    }
+    else
+      return disparo :: lista
+    }
+  }
