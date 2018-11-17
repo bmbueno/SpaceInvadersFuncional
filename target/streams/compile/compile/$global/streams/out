@@ -1,0 +1,6 @@
+[0m[[0m[31merror[0m] [0m[0m/home/bruno/Área de Trabalho/SpaceInvadersFuncional/src/main/scala/Controller/Controller.scala:33:43: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: Model.Alien[0m
+[0m[[0m[31merror[0m] [0m[0m  def getAliens(i : Int,j : Int): Alien = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
