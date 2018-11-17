@@ -9,11 +9,13 @@ import java.time._
 import Array.ofDim
 
 class UI() extends JFrame with KeyListener {
-  
+
+  var controle = new Controller()
 
   def inicia(): Unit = {
-
+    //controle.inicializa(NUMERO_ALIENS_LINHA,)
   }
+
   def iniciarMenu(): Unit = {
 
   }
