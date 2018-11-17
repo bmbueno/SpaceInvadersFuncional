@@ -1,6 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/bruno/Área de Trabalho/SpaceInvadersFuncional/src/main/scala/Controller/Controller.scala:33:43: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
-[0m[[0m[31merror[0m] [0m[0m required: Model.Alien[0m
-[0m[[0m[31merror[0m] [0m[0m  def getAliens(i : Int,j : Int): Alien = {[0m
-[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/msvinicioos/Desktop/MLP/SpaceInvadersFuncional/src/main/scala/Model/SpaceInvaders.scala:5:21: type List takes type parameters[0m
+[0m[[0m[31merror[0m] [0m[0m  def teste(l:List):List = {[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/msvinicioos/Desktop/MLP/SpaceInvadersFuncional/src/main/scala/Model/SpaceInvaders.scala:5:15: type List takes type parameters[0m
+[0m[[0m[31merror[0m] [0m[0m  def teste(l:List):List = {[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

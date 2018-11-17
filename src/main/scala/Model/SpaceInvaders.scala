@@ -1,9 +1,12 @@
 package Model
 
-import View.UI
+object SpaceInvaders{
 
-object SpaceInvaders {
+
+
   def main(args: Array[String]): Unit = {
+
+    var lista = 1::2::4::6::Nil;
     var interface = new UI()
     var listaPersonagem = List[Alien]()
     var lista = new Lista()
@@ -12,5 +15,7 @@ object SpaceInvaders {
 
     println(listaPersonagem)
 
-}
+
+    println(teste(lista))
+  }
 }
