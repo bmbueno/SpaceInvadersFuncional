@@ -3,13 +3,9 @@ package Model
 import javax.swing.JLabel
 
 class Personagem(coordX: Int, coordY: Int, ativo1: Boolean = true) extends JLabel{
-  private var coordenadaX :Int = coordX;
-  private var coordenadaY :Int = coordY;
+  var coordenadaX :Int = coordX
+  var coordenadaY :Int = coordY
   private var ativo       :Boolean = ativo1;
-
-  //Definindo a label
-  this.setVisible(this.ativo);
-
 
   def getAtivo = ativo
   def getCX(): Int = {

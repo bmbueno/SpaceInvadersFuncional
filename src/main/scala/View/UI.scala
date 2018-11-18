@@ -15,35 +15,17 @@ class UI() extends JFrame with KeyListener {
   val titulo: String = "Space Invaders"
   var panel: JPanel = new JPanel()
   var tela: JFrame = new JFrame()
-  val labelTitulo: JLabel = new JLabel("SPACE INVADERS")
   var labelVida: JLabel = new JLabel()
   var labelPontuacao: JLabel = new JLabel()
-  var labelNave: JLabel = new JLabel(Constantes.IMG_NAVE)
   var listaLabelsAliens = List[JLabel]()
+  var auxMovimento: JLabel = new JLabel()
 
-
-  def inicia(): Unit = {
-    // this.tela.setTitle(titulo);
-    // this.tela.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    // this.tela.setSize(600, 600);
-    // this.tela.setLocationRelativeTo(null);
-    // this.tela.addKeyListener(this)
-    // this.tela.setResizable(false)
-    // this.tela.setVisible(true)
-  }
-
-  def iniciarMenu(): Unit = {
-
-  }
   def iniciarJogo(): Unit ={
 
-
     listaLabelsAliens = controle.labelsAliens(controle.aliens)
-    //println(listaLabelsAliens)
 
     panel = controle.adcLabelsPanel(listaLabelsAliens,panel)
     tela.add(panel)
-  //  tela = controle.addLabelsAliensPanel(listaLabelsAliens,tela)
 
     this.tela.setTitle(titulo);
     this.tela.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -53,28 +35,31 @@ class UI() extends JFrame with KeyListener {
     this.tela.setResizable(false)
     this.tela.setVisible(true)
 
-      //this.panel.setBackground(Color.black)
-      //  this.panel.add(controle.associaLabelAlien(controle.alien))
-        // this.panel.add(this.labelNave)
-        // this.labelNave.setBounds(100,100,100,100)
-        // this.panel.add(this.labelVida)
-        // this.panel.add(this.labelPontuacao)
-        // this.panel.setBounds(0,0,600,600)
-        // this.panel.setLayout(null)
-        // this.tela.add(this.panel)
-        // this.tela.setVisible(true)
-
-
-
-  }
-  def fimDeJogoWin(): Unit = {
-
-  }
-
-  def fimDeJogoOver(): Unit = {
-
   }
   def keyPressed(k:KeyEvent): Unit = {
+    k.getKeyCode() match {
+        case 32 => {
+          var dis = new JLabel(Constantes.IMG_DISPARO)
+          panel.add(dis)
+          for(i <- 0 to 10)
+          {Thread.sleep(1000)
+          dis.setBounds(250,250+i*10,100,100)}
+
+        }
+        case 37 => {
+          panel.remove(auxMovimento)                                    // remove a nave anterior pra por a proxima nova
+          auxMovimento = controle.trocaNave(controle.nave.coordenadaX-10)
+          panel.add(auxMovimento)
+          auxMovimento.setBounds(controle.nave.coordenadaX,530,50,50)
+        }
+        case 39 => {
+          panel.remove(auxMovimento)
+          auxMovimento = controle.trocaNave(controle.nave.coordenadaX+10)
+          panel.add(auxMovimento)
+          auxMovimento.setBounds(controle.nave.coordenadaX,530,50,50)
+        }
+        case _ => // default
+    }
 
   }
   def keyReleased(k:KeyEvent): Unit = {
@@ -82,27 +67,4 @@ class UI() extends JFrame with KeyListener {
 
   def keyTyped(k:KeyEvent): Unit = {
   }
-
-  def printNave(): Unit = {
-
-  }
-  def printAliens(): Unit = {
-
-  }
-
-
-
-  def printDisparo(): Unit = {
-
-  }
-    def printDisparoAliens(): Unit = {
-
-    }
-    def printInfo(): Unit = {
-
-    }
-  def verificaFimJogo(): Unit = {
-
-  }
-
 }

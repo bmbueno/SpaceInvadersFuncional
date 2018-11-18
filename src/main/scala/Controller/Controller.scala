@@ -9,11 +9,22 @@ import javax.swing.{JFrame,WindowConstants, JLabel, JPanel, ImageIcon}
 
 class Controller(){
 
-  var aliens = List[Alien]()
-  //aliens = inicializaAliens(13,aliens)
-  aliens = inicializaAliens1(4,aliens)
+  var aliens = inicializaAliens1(4,List[Alien]())
+  var nave: Nave = new Nave(500,50)
+  var labelNave: JLabel = new JLabel(Constantes.IMG_NAVE)
 
+//==================================================================================
 
+// Função que troca a nave a ser utilizada atualizando sua posição
+def trocaNave(x: Int): JLabel = {
+  if(x > 0 && x < 550) {
+    nave = new Nave(x,50)
+    labelNave = new JLabel(Constantes.IMG_NAVE)
+
+    return labelNave
+  }else
+    return labelNave
+}
 //==================================================================================
 
 // Função que associa lista de aliens a lista de labels correspondentes, para depois adc no panel
@@ -73,7 +84,7 @@ def inicializaFrotaAliens(numAliens: Int, lista: List[Alien], numFrota: Int): Li
   //================================================================================================
 // Função que devolve um panel pronto com as labels dadas em uma lista
   def adcLabelsPanel(listaLabels: List[JLabel], panel: JPanel): JPanel = {
-    listaLabels.map((label: JLabel) => panel.add(label))
+    listaLabels.map((label: JLabel) => panel.add(label))                                                // <= UTILIZAÇÃO MAP
     panel.setBackground(Color.black)
     panel.setBounds(0,0,600,600)
     panel.setLayout(null)
@@ -81,32 +92,5 @@ def inicializaFrotaAliens(numAliens: Int, lista: List[Alien], numFrota: Int): Li
   }
   //================================================================================================
 
-  def setDificuldade(dificuldade: String): Unit = {
-
-  }
-
-  def setTecla(tecla: Int): Unit = {
-
-  }
-
-  def Nave(): Unit = {
-  }
-
-  def Alien(): Unit = { // vai ter de receber a lista de aliens
-
-  }
-
-  def disparoNav(): Unit = {
-
-
-}
-
-  def getAliens(i : Int,j : Int): Unit = {
-
-  }
-
-  def disparoAliens(): Unit = {
-
-  }
 
 }
