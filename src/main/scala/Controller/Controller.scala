@@ -10,7 +10,8 @@ import javax.swing.{JFrame,WindowConstants, JLabel, JPanel, ImageIcon}
 class Controller(){
 
   var aliens = List[Alien]()
-  aliens = inicializaAliens(11,aliens)
+  //aliens = inicializaAliens(13,aliens)
+  aliens = inicializaAliens1(4,aliens)
 
 
 //==================================================================================
@@ -27,6 +28,23 @@ class Controller(){
     aux.setBounds(alien.getCX,alien.getCY,100,100)
     return aux
   }
+// ================================================================================================
+
+// Função cria alies de acordo com o numero de frotas dados
+def inicializaAliens1(numFrotas: Int, lista: List[Alien]): List[Alien] = {
+    numFrotas match {
+      case 0 => lista
+      case _ => inicializaAliens1(numFrotas-1,inicializaFrotaAliens(11,lista,numFrotas-1))
+    }
+}
+
+def inicializaFrotaAliens(numAliens: Int, lista: List[Alien], numFrota: Int): List[Alien] = {
+    numAliens match {
+      case 0 => lista
+      case _ => inicializaFrotaAliens(numAliens-1, adicionaAlien(new Alien(5+((numAliens-1)*50),20+(numFrota*50)),lista),numFrota)
+    }
+  }
+
 
 //=================================================================================================
 
