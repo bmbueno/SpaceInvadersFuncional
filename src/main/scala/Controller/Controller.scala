@@ -14,6 +14,8 @@ class Controller(){
 
 
 //==================================================================================
+
+// Função que associa lista de aliens a lista de labels correspondentes, para depois adc no panel
   def labelsAliens(listaAliens: List[Alien]): List[JLabel] = {
     listaAliens match {
       case List() => Nil
@@ -27,6 +29,8 @@ class Controller(){
   }
 
 //=================================================================================================
+
+// Função que cria uma lista de aliens com o numero de aliens dado
   def inicializaAliens(numAliens: Int, lista: List[Alien]): List[Alien] = {
     numAliens match {
       case 0 => lista
@@ -41,6 +45,7 @@ class Controller(){
   }
 
   //================================================================================================
+  // Função que adiciona um disparo na lista de disparos
   def adicionaDisparo(disparo: Disparo, lista: List[Disparo]): List[Disparo] ={
     lista match {
       case List() =>  List(disparo)
@@ -48,7 +53,7 @@ class Controller(){
     }
   }
   //================================================================================================
-
+// Função que devolve um panel pronto com as labels dadas em uma lista
   def adcLabelsPanel(listaLabels: List[JLabel], panel: JPanel): JPanel = {
     listaLabels.map((label: JLabel) => panel.add(label))
     panel.setBackground(Color.black)
