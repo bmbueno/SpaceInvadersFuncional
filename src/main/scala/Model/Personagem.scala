@@ -3,21 +3,17 @@ package Model
 import javax.swing.JLabel
 
 class Personagem(coordX: Int, coordY: Int, ativo1: Boolean = true) extends JLabel{
-  private var coordenadaX :Int = coordX;
-  private var coordenadaY :Int = coordY;
+  var coordenadaX :Int = coordX
+  var coordenadaY :Int = coordY
   private var ativo       :Boolean = ativo1;
 
-  //Definindo a label
-  this.setVisible(this.ativo);
-
-
   def getAtivo = ativo
-  def getCoordenadaX():Int = {
-    return this.coordenadaX;
+  def getCX(): Int = {
+    return coordenadaX
   }
 
-  def getCoordenadaY():Int = {
-    return this.coordenadaY;
+  def getCY(): Int = {
+    return coordenadaY
   }
 
   // def morreu(list: List[Personagem], personagem: Personagem): List[Personagem] = {
@@ -51,7 +47,7 @@ class Personagem(coordX: Int, coordY: Int, ativo1: Boolean = true) extends JLabe
   // }
 
   def colisao(per: Personagem): Boolean = {
-    if(per.getCoordenadaX() == this.getCoordenadaX() && per.getCoordenadaY() == this.getCoordenadaY()){
+    if(per.getCX == this.getCX && per.getCY == this.getCY){
       //return List((new Personagem(per.getCoordenadaX(),per.getCoordenadaY(),false)),(new Personagem(this.getCoordenadaX(),per.getCoordenadaY(),false)))
       return true
     }
